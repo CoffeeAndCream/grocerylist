@@ -1,4 +1,4 @@
-Rails Omniauth
+Grocery list
 ========================
 
 This application was generated with the rails_apps_composer gem:
@@ -10,49 +10,9 @@ ________________________
 
 Recipes:
 
-* apps4
-* controllers
-* core
-* email
-* extras
-* frontend
-* gems
-* git
-* init
-* models
-* prelaunch
-* railsapps
-* readme
-* routes
-* saas
-* setup
-* testing
-* views
-
-Preferences:
-
-* git: true
-* apps4: rails-omniauth
-* unit_test: false
-* integration: false
-* fixtures: false
-* email: none
-* authentication: omniauth
-* authorization: none
-* starter_app: false
-* quiet_assets: true
-* local_env_file: false
-* better_errors: true
-* dev_webserver: webrick
-* prod_webserver: same
-* database: sqlite
-* templates: erb
-* continuous_testing: none
-* frontend: simple
-* omniauth_provider: twitter
-* form_builder: none
-* rvmrc: true
-
+Make your own recipes and store the grocery list in a single convenient location! 
 ________________________
 
 License
+
+* MIT
