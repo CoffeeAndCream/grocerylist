@@ -50,7 +50,7 @@ $(document).on('turbolinks:load', function() {
     $(this).next().fadeToggle();
   });
   $(".quantity-autocomplete").selectize({
-				maxItems: 5,
+				maxItems: 2,
 				valueField: 'id',
 				labelField: 'title',
 				searchField: 'title',
@@ -66,6 +66,6 @@ $(document).on('turbolinks:load', function() {
           {id: 9, title: 'Milliliter'},
           {id: 10, title: 'Liter'}
 				],
-				create: true
+				create: false
 			});
 });
