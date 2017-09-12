@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function() {
   });
   $(".quantity-autocomplete").selectize({
 				maxItems: 2,
-				valueField: 'id',
+				valueField: 'title',
 				labelField: 'title',
 				searchField: 'title',
 				options: [
