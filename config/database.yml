@@ -6,15 +6,3 @@ development:
   username: postgres
   password: turn0ffth3l1ghts
   host: localhost
-
-test:
-  adapter: postgresql
-  database: recipe
-  pool: 5
-  timeout: 5000
-
-production:
-      adapter: postgresql
-      database: recipe
-      pool: 5
-      timeout: 5000
