@@ -6,3 +6,7 @@ development:
   username: postgres
   password: turn0ffth3l1ghts
   host: localhost
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
