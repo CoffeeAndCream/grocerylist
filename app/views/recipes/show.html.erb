@@ -30,7 +30,7 @@
     <h3 id="ingredientsHeader">Add Stuff</h3>
     <%= bootstrap_form_for @recipe.items.new, remote: true do |f| %>
       <div class="col-md-1">
-        <%= f.number_field :quantity, label: 'Amount', placeholder: '3', inline: true, required: true  %>
+        <%= f.text_field :quantity, label: 'Amount', placeholder: '3', inline: true, required: true  %>
       </div>
       <div class="col-md-4">
         <%= f.text_field :quantity_type, label: 'Measurement', class: 'quantity-autocomplete', html: {data: {autocomplete_source: ["Cup", "Quart", "Ounce", "Pound", "Falt"]}}, placeholder: 'Cup(s), Tablespoon(s), Teaspoon(s)...', inline: true, required: false  %>
