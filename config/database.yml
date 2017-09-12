@@ -7,10 +7,19 @@ development:
   password: turn0ffth3l1ghts
   host: localhost
 
-production:
-  <<: *default
-  database: recipe_app_production
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+test: &TEST
+  adapter: postgresql
+  encoding: unicode
+  database: recipe_test
+  pool: 5
   username: postgres
-  password: <%= ENV['RECIPE_APP_PRODUCTION_PASSWORD'] %>
+  password: turn0ffth3l1ghts
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: recipe_production
+  pool: 5
+  username: postgres
+  password: turn0ffth3l1ghts
