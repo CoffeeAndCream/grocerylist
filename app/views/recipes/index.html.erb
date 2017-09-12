@@ -1,0 +1,35 @@
+<br>
+<div class="card">
+<h1 id="recipeHeader">
+  Recipes
+  <%= link_to 'New', new_recipe_path %>
+</h1>
+<input class="form-control" type="text" id="myInput" onkeyup="searchableMenu()" placeholder="Search...">
+<br>
+<table id="searchableTable">
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <h2 id="recipeName">
+            <% if recipe.added_to_cart %>
+              <%= link_to raw('<i class="material-icons" style="color: red !important">remove_shopping_cart</i>').html_safe, recipe_path(recipe, recipe: {added_to_cart: false}), method: :put, remote: true, class: 'shoppingCartRemoveIcon' %>
+              <div class="assistance-text">
+                This will remove your ingredients from your cart.
+              </div>
+            <% else %>
+              <%= link_to raw('<i class="material-icons" style="color: green !important">add_shopping_cart</i>').html_safe, recipe_path(recipe, recipe: {added_to_cart: true}), method: :put, remote: true, class: 'shoppingCartAddIcon' %>
+              <div class="assistance-text">
+                This will add the ingredients of this recipe to your cart.
+              </div>
+            <% end %>
+          <%= link_to recipe.name, recipe %>
+          </h2>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</div>

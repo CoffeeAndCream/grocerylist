@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
     end
 
     def correct_user?
-      @user = User.find(params[:id])
+      @user = User.where(id: params[:id]).first
       unless current_user == @user
-        redirect_to root_url, :alert => "Access denied."
+        redirect_to root_url, :alert => "You can only view your profile."
       end
     end
 

@@ -11,5 +11,164 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap-material-design
+ *= require selectize
+ *= require selectize.default
  *= require_self
  */
+
+a {
+  color: #fb0000 !important;
+}
+//font colour in header
+.navbar-header, .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: white !important ;
+}
+//hover link in header
+.navbar-header:hover, .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
+  background-color: #273479 !important;
+}
+//active link in header
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+  background-color: #5c82bd !important;
+}
+
+
+
+.card {
+  padding: 25px !important;
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: silver;
+  border-style: groove;
+}
+.container, main {
+  padding: 0 !important;
+}
+.navbar {
+  padding-left: 15px;
+  padding-right:15px;
+  li {
+    font-family: 'VT323', cursive;
+    font-size: 24px;
+  }
+}
+
+
+#myInput {
+  margin-top: 25px;
+}
+.assistance-text {
+  font-family: 'VT323', cursive;
+  color: darksalmon;
+  font-size: 22px;
+  position: absolute;
+  display: none;
+}
+
+
+
+
+#groceryHeader {
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  font-size: 2.5vw;
+  font-family: 'VT323', cursive;
+  a:hover {
+    text-decoration: none;
+    background-color: white !important;
+  }
+}
+#groceryDescription {
+  z-index: 2;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+}
+#groceryList {
+  width: 100% !important;
+  z-index: 2;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  a:hover {
+    text-decoration: underline;
+    background-color: white !important;
+  }
+}
+#groceryListItem {
+  li {
+    list-style: none;
+    color: black !important;
+  }
+  li:hover, li:focus {
+    cursor: pointer;
+  }
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
+  margin-left: 20px;
+}
+.groceryListItemRemoved {
+  text-decoration: line-through !important;
+}
+
+#recipe {
+}
+#recipeHeader {
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  font-size: 2.5vw;
+  font-family: 'VT323', cursive;
+  a:hover {
+    text-decoration: underline;
+    background-color: white !important;
+  }
+}
+#ingredientsHeader {
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  font-family: 'VT323', cursive;
+}
+#recipeName {
+  z-index: 2;
+
+  font-family: 'Dancing Script', cursive;
+  a:hover {
+    text-decoration: none;
+    background-color: white !important;
+  }
+}
+#recipeDescription {
+  z-index: 2;
+  font-size: 20px;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+}
+#ingredientList {
+
+}
+#ingredientListItem {
+  a {
+    color: black !important;
+  }
+  a:hover, a:focus {
+    background-color: rgba(0,0,0,0) !important;
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: line-through;
+  }
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
+  margin-left: 20px;
+}

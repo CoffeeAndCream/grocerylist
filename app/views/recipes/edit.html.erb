@@ -1,0 +1,9 @@
+<br>
+<div class="card">
+  <h1 id="recipeHeader">Editing Recipe</h1>
+
+  <%= render 'form', recipe: @recipe %>
+
+  <%= link_to 'Show', @recipe %> |
+  <%= link_to 'Back', recipe_path(@recipe) %>
+</div>

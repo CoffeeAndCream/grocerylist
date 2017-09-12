@@ -20,9 +20,15 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
+gem 'bootstrap-material-design'
+gem 'bootstrap_form'
 gem 'high_voltage'
+gem 'ruby-units'
 gem 'omniauth'
+gem 'omniauth-google'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-twitter'
+gem 'selectize-rails'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

@@ -1,0 +1,25 @@
+<br>
+<div class="card">
+  <h1 id="groceryHeader">Cart</h1>
+  <h1 id="groceryList">Shopping List</h1>
+  <h3 id="groceryDescription">Click on any of the items to cross them off the list!</h3>
+  <hr>
+    <% @items.each do |item| %>
+    <div class="row" id="groceryListItem">
+      <li>
+      -
+      <%= @items[item.first]["quantity"] %>
+      <%= @items[item.first]["quantity"] > 1 ? @items[item.first]["quantity_type"].pluralize.downcase : @items[item.first]["quantity_type"].singularize.downcase %> <%= ' of ' if !@items[item.first]["quantity_type"].empty? %>
+      <%= @items[item.first]["quantity"] > 1 && @items[item.first]["quantity_type"].empty? ? item.first.pluralize.capitalize : item.first.singularize.capitalize %>
+      </li>
+    </div>
+  <% end %>
+  </div>
+</div>
+<script>
+$("div#groceryListItem").click(function() {
+  console.log($(this));
+  $(this).toggleClass('groceryListItemRemoved');
+});
+
+</script>

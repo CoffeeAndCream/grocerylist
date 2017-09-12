@@ -1,0 +1,48 @@
+<br>
+<% unless @items.nil? %>
+  <div class="card" id="recipe">
+    <h1 id="recipeHeader">
+      Recipe
+      <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+      <%= link_to 'Destroy', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </h1>
+    <h1 id="recipeName"><%=@recipe.name%></h1>
+    <h3 id="recipeDescription"><%= @recipe.description %></h3>
+    <hr>
+    <div id="ingredientList">
+      <% @items.each do |item| %>
+      <div class="row" id="ingredientListItem">
+        <%= link_to item_path(item, recipe_id: @recipe), method: :delete, remote: true, data: {confirm: "Are you sure you want to delete that ingredient?"} do %>
+        -
+        <%= item.quantity %>
+        <%= item.quantity > 1 ? item.quantity_type.pluralize.downcase : item.quantity_type.singularize.downcase %> <%= ' of ' if !item.quantity_type.empty? %>
+        <%= item.quantity > 1 && item.quantity_type.empty? ? item.name.pluralize.capitalize : item.name.capitalize %></h4>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<br>
+<br>
+<div class="card">
+  <div class="row ingredients-form">
+    <h3 id="ingredientsHeader">Add Stuff</h3>
+    <%= bootstrap_form_for @recipe.items.new, remote: true do |f| %>
+      <div class="col-md-1">
+        <%= f.number_field :quantity, label: 'Amount', placeholder: '3', inline: true, required: true  %>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :quantity_type, label: 'Measurement', class: 'quantity-autocomplete', html: {data: {autocomplete_source: ["Cup", "Quart", "Ounce", "Pound", "Falt"]}}, placeholder: 'Cup(s), Tablespoon(s), Teaspoon(s)...', inline: true, required: false  %>
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :name, label: 'Ingredient', placeholder: 'Tomato, Flour, Baking Soda...', inline: true, required: true %>
+      </div>
+      <%= f.hidden_field :recipe_id, value: @recipe.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="col-md-2">
+        <%= f.submit 'add', class: 'btn btn-sm btn-success', inline: true, id: 'ingredient-submit-button'  %>
+      </div>
+    <% end %>
+  </div>
+</div>

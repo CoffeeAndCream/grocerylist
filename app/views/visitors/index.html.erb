@@ -1,2 +1,21 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<br>
+<% content_for :title do %>About<% end %>
+<div class="card">
+  <div id="recipeHeader">
+    <br>
+    Brain Food
+  </div>
+  <p style="font-family: VT323, cursive; font-size: 22px">
+    Hello,
+    <br>
+    <br>
+    I created this website as a means to organize my shopping list. My girlfriend is obsessed with being organized and having all of the necessary ingredients before we go out. Unlike me,
+    she likes to actually <strong>think ahead</strong> before she does things (weird). I tend to "wing it" which drives her crazy. I just hate sitting down and cross referencing our ingredients with
+    our recipes in order to produce a meaningful and useful shopping list. So, this app does that.
+    <br>
+    <br>
+    I also intend to allow recipe sharing along down the line. Future updates will be slow because this is a toy app. I'm not trying to make it production ready.
+    <br>
+    <br>
+    Anyways, have fun!
+</div>

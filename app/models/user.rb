@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+  has_many :recipes
+  has_many :items
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']
