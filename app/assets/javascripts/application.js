@@ -50,7 +50,7 @@ $(document).on('turbolinks:load', function() {
     $(this).next().fadeToggle();
   });
   $(".quantity-autocomplete").selectize({
-				maxItems: 2,
+				maxItems: 1,
 				valueField: 'title',
 				labelField: 'title',
 				searchField: 'title',
