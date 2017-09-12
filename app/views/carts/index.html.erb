@@ -8,9 +8,9 @@
     <div class="row" id="groceryListItem">
       <li>
       -
-      <%= @items[item.first]["quantity"] %>
-      <%= @items[item.first]["quantity"] > 1 ? @items[item.first]["quantity_type"].pluralize.downcase : @items[item.first]["quantity_type"].singularize.downcase %> <%= ' of ' if !@items[item.first]["quantity_type"].empty? %>
-      <%= @items[item.first]["quantity"] > 1 && @items[item.first]["quantity_type"].empty? ? item.first.pluralize.capitalize : item.first.singularize.capitalize %>
+      <%= @items[item.first]["quantity"] % 1 != 0 ? @items[item.first]["quantity"] : @items[item.first]["quantity"].round %>
+      <%= @items[item.first]["quantity"] != 1 ? @items[item.first]["quantity_type"].pluralize.downcase : @items[item.first]["quantity_type"].singularize.downcase %> <%= ' of ' if !@items[item.first]["quantity_type"].empty? %>
+      <%= @items[item.first]["quantity"] != 1 && @items[item.first]["quantity_type"].empty? ? item.first.pluralize.capitalize : item.first.singularize.capitalize %>
       </li>
     </div>
   <% end %>
