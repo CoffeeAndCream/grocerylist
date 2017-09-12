@@ -8,5 +8,9 @@ development:
   host: localhost
 
 production:
+  <<: *default
+  database: recipe_app_production
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  username: postgres
+  password: <%= ENV['RECIPE_APP_PRODUCTION_PASSWORD'] %>
