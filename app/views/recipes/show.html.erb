@@ -14,7 +14,7 @@
       <div class="row" id="ingredientListItem">
         <%= link_to item_path(item, recipe_id: @recipe), method: :delete, remote: true, data: {confirm: "Are you sure you want to delete that ingredient?"} do %>
         -
-        <%= item.quantity %>
+        <%= item.quantity % 1 != 0 ? item.quantity : item.quantity.round %>
         <%= item.quantity != 1 ? item.quantity_type.pluralize.downcase : item.quantity_type.singularize.downcase %> <%= ' of ' if !item.quantity_type.empty? %>
         <%= item.quantity != 1 && item.quantity_type.empty? ? item.name.pluralize.capitalize : item.name.capitalize %></h4>
         <% end %>
